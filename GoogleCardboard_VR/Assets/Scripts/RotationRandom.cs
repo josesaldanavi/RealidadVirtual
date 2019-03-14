@@ -9,19 +9,29 @@ public class RotationRandom: MonoBehaviour
     private AudioSource audioExplosion;
     private Rigidbody rgbd;
     private Transform roca;
+    public  GameObject Asteroide;
+    public GameObject point;
+    public GameController pointScript;
 
     private void Awake()
     {
-        rgbd = GetComponent<Rigidbody>();
+        //rgbd = GetComponent<Rigidbody>();
+ 
         roca = GetComponent<Transform>();
-        audioExplosion = GetComponent<AudioSource>();
+        //audioExplosion = GetComponent<AudioSource>();
+        
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        point = GameObject.FindGameObjectWithTag("GameController");
+        pointScript = point.GetComponent<GameController>();
+        rgbd = Asteroide.GetComponent<Rigidbody>();
         rgbd.angularVelocity = Random.insideUnitCircle * rotationVelocity;
+
+
         
+
     }
 
     // Update is called once per frame
@@ -34,9 +44,9 @@ public class RotationRandom: MonoBehaviour
         health -= amount;
         if(health <= 0)
         {
-            
-            audioExplosion.Play();
+            //audioExplosion.Play();
             Destroy(gameObject);
+            pointScript.score += 1;
         }
     }
 }
