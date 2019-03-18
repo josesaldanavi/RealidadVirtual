@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnHazard());
+        
     }
 
     // Update is called once per frame
