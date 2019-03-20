@@ -19,15 +19,26 @@ public class PlayerShoot : MonoBehaviour
     void Shoot()
     {
         RaycastHit hit;
-        if(Physics.Raycast(cameraPlayer.transform.position, cameraPlayer.transform.forward, out hit, range))
+        if (Physics.Raycast(cameraPlayer.transform.position, cameraPlayer.transform.forward, out hit, range))
         {
+            Debug.Log(hit.transform.name);
             RotationRandom target = hit.transform.GetComponent<RotationRandom>();
-
+            
             if(target != null)
             {
                 target.TakeDamage(damage);
             }
 
         }
+    }
+
+    void PlayerGame()
+    {
+        RaycastHit playGame;
+        if (Physics.Raycast(cameraPlayer.transform.position, cameraPlayer.transform.forward, out playGame, range))
+        {
+
+        }
+
     }
 }
