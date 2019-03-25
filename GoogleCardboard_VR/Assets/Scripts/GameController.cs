@@ -64,5 +64,11 @@ public class GameController : MonoBehaviour
             }
         }
     }
+
+    void ComienzaJuego()
+    {
+
+    }
+
     
 }
