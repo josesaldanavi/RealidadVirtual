@@ -21,7 +21,7 @@ public class PlayerShoot : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cameraPlayer.transform.position, cameraPlayer.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
+            //Debug.Log(hit.transform.name);
             RotationRandom target = hit.transform.GetComponent<RotationRandom>();
             
             if(target != null)
